@@ -1,14 +1,10 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
+using DevErrorHandler;
 
 namespace TestErrorMargin
 {
-    #region TestErrorMargin Factory
-    /// <summary>
-    /// Export a <see cref="IWpfTextViewMarginProvider"/>, which returns an instance of the margin for the editor
-    /// to use.
-    /// </summary>
     [Export(typeof(IWpfTextViewMarginProvider))]
     [Name(TestErrorMargin.MarginName)]
     [Order(After = PredefinedMarginNames.HorizontalScrollBar)] //Ensure that the margin occurs below the horizontal scrollbar
@@ -22,5 +18,4 @@ namespace TestErrorMargin
             return new TestErrorMargin(textViewHost.TextView);
         }
     }
-    #endregion
 }

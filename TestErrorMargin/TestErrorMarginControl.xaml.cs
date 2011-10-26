@@ -19,6 +19,8 @@ namespace TestErrorMargin
     /// </summary>
     public partial class TestErrorMarginControl : UserControl
     {
+        internal event EventHandler ThrowError;
+
         public TestErrorMarginControl()
         {
             InitializeComponent();
@@ -29,9 +31,12 @@ namespace TestErrorMargin
             e.CanExecute = true;
         }
 
-        private void Activate(object sender, ExecutedRoutedEventArgs e)
+        private void DoActivate(object sender, ExecutedRoutedEventArgs e)
         {
-
+            if (ThrowError != null)
+            {
+                ThrowError(this, EventArgs.Empty);
+            }
         }
     }
 }

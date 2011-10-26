@@ -1,19 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.VisualStudio.Text;
 using System.ComponentModel.Composition;
 
 namespace DevErrorHandler.Implementation
 {
-    [Export(typeof(IExtensionErrorHandler))]
     [Export(typeof(IErrorData))]
-    internal sealed class ErrorData : IExtensionErrorHandler, IErrorData
+    [Export(typeof(IExtensionErrorHandler))]
+    internal sealed class ErrorData : IErrorData, IExtensionErrorHandler
     {
         private bool _ignoreAll;
         private event EventHandler<ExceptionEventArgs> _errorThrownEvent;
         private event EventHandler _errorIgnoredEvent;
+
+        internal ErrorData()
+        {
+
+        }
+
+        private void RaiseIgnoreLastError()
+        {
+            if (_errorIgnoredEvent != null)
+            {
+                _errorIgnoredEvent(this, EventArgs.Empty);
+            }
+        }
 
         #region IExtensionErrorHandler
 
@@ -38,15 +48,16 @@ namespace DevErrorHandler.Implementation
         bool IErrorData.IgnoreAll
         {
             get { return _ignoreAll; }
-            set { _ignoreAll = value; }
+            set 
+            { 
+                _ignoreAll = value;
+                RaiseIgnoreLastError();
+            }
         }
 
         void IErrorData.IgnoreLastError()
         {
-            if (_errorIgnoredEvent != null)
-            {
-                _errorIgnoredEvent(this, EventArgs.Empty);
-            }
+            RaiseIgnoreLastError();
         }
 
         event EventHandler<ExceptionEventArgs> IErrorData.ErrorThrown

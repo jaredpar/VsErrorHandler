@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="25" d:DesignWidth="400"
+             d:DesignHeight="200" d:DesignWidth="400"
              x:Name="errorMarginControl">
     <UserControl.Resources>
         <Style x:Key="ActionButton" TargetType="Button">
@@ -13,9 +13,12 @@
         
     </UserControl.Resources>
 
-    <Grid DataContext="{Binding ElementName=errorMarginControl}">
+    <Grid 
+        DataContext="{Binding ElementName=errorMarginControl}"
+        Background="Cornsilk" >
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -36,25 +39,37 @@
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
-            Text="Unhandled Exception Ocurred" />
+            Background="Cornsilk"
+            BorderThickness="0"
+            Text="{Binding Path=HeaderText}" />
 
         <Button
             Grid.Row="0"
             Grid.Column="2"
             Style="{StaticResource ActionButton}"
+            Click="OnShowClick"
             Content="Show" />
 
         <Button
             Grid.Row="0"
             Grid.Column="3"
             Style="{StaticResource ActionButton}"
+            Click="OnIgnoreClick"
             Content="Ignore" />
 
         <Button
             Grid.Row="0"
             Grid.Column="4"
             Style="{StaticResource ActionButton}"
+            Click="OnIgnoreAllClick"
             Content="Ignore All" />
+
+        <TextBox 
+            Grid.Row="1"
+            Grid.ColumnSpan="5"
+            Visibility="{Binding Path=ErrorTextVisibility}"
+            Text="{Binding Path=ErrorText}"
+            />
 
     </Grid>
 </UserControl>
