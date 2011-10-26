@@ -9,8 +9,8 @@
     <ProjectGuid>{BB1F8BCF-38DF-4900-B8B3-8BFA9BF3CD29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DevErrorHandler</RootNamespace>
-    <AssemblyName>DevErrorHandler</AssemblyName>
+    <RootNamespace>VsErrorHandler</RootNamespace>
+    <AssemblyName>VsDevErrorHandler</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

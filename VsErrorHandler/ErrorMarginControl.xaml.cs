@@ -60,7 +60,7 @@ namespace VsErrorHandler
                 _exception = value;
                 if (_exception != null)
                 {
-                    HeaderText = String.Format("Unhandled Exception Occurred: {0}", _exception.GetType().Name);
+                    HeaderText = String.Format("Unhandled Exception of Type '{0}' Occurred", _exception.GetType().Name);
                     ErrorText = FormatErrorText(_exception);
                 }
                 else

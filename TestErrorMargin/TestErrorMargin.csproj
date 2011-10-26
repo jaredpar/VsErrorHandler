@@ -80,7 +80,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DevErrorHandler\VsErrorHandler.csproj">
+    <ProjectReference Include="..\VsErrorHandler\VsErrorHandler.csproj">
       <Project>{BB1F8BCF-38DF-4900-B8B3-8BFA9BF3CD29}</Project>
       <Name>VsErrorHandler</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3b</IncludeOutputGroupsInVSIX>

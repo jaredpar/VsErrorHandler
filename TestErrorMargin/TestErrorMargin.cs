@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.VisualStudio.Text.Editor;
 using System.Windows;
+using System.Diagnostics;
 
 namespace TestErrorMargin
 {
@@ -37,6 +38,7 @@ namespace TestErrorMargin
             }
         }
 
+        [DebuggerNonUserCode]
         private void OnCaretPositionChanged(object sender, EventArgs e)
         {
             if (_inThrowError)
