@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition;
 
-namespace DevErrorHandler
+namespace VsErrorHandler
 {
     internal sealed class ExceptionEventArgs : EventArgs
     {

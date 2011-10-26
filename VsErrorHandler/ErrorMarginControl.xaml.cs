@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DevErrorHandler
+namespace VsErrorHandler
 {
     public partial class ErrorMarginControl : UserControl
     {

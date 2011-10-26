@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Text;
 using System.ComponentModel.Composition;
 
-namespace DevErrorHandler.Implementation
+namespace VsErrorHandler.Implementation
 {
     [Export(typeof(IErrorData))]
     [Export(typeof(IExtensionErrorHandler))]

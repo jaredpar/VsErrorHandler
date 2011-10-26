@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
 
-namespace DevErrorHandler.Implementation
+namespace VsErrorHandler.Implementation
 {
     [Export(typeof(IWpfTextViewMarginProvider))]
     [Name(ErrorMargin.MarginName)]

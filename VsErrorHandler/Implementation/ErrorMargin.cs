@@ -4,7 +4,7 @@ using System.Windows.Media;
 using Microsoft.VisualStudio.Text.Editor;
 using System.Windows;
 
-namespace DevErrorHandler.Implementation
+namespace VsErrorHandler.Implementation
 {
     internal sealed class ErrorMargin : IWpfTextViewMargin
     {

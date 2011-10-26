@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
-using DevErrorHandler;
+using VsErrorHandler;
 
 namespace TestErrorMargin
 {

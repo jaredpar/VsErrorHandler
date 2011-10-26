@@ -10,7 +10,7 @@ using IOleServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
 using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.Settings;
 
-namespace DevErrorHandler.Implementation
+namespace VsErrorHandler.Implementation
 {
     /// <summary>
     /// This class exists to suppress the default Visual Studio Error Dialog.  It will do
